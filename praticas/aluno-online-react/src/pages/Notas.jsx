@@ -27,52 +27,20 @@ export default function Notas() {
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-[#FFFFFF] font-sans">
-      
       <Sidebar paginaAtual="Notas" />
       
       <div className="flex flex-col flex-1 p-6 md:p-10">
-        
         <Header titulo="Minhas Notas" />
 
         <main>
           <TextoDescritivo texto="Boletim Acadêmico" />
           
           <div className="flex flex-col gap-6">
-            <Tabela 
-              titulo="2026.1" 
-              colunas={colunasNotas} 
-              dados={notas2026_1} 
-            />
-            <Tabela 
-              titulo="2025.2" 
-              colunas={colunasNotas} 
-              dados={notas2025_2} 
-            />
-            <Tabela 
-              titulo="2025.1" 
-              colunas={colunasNotas} 
-              dados={notas2025_1} 
-            />
+            <Tabela titulo="2026.1" colunas={colunasNotas} dados={notas2026_1} />
+            <Tabela titulo="2025.2" colunas={colunasNotas} dados={notas2025_2} />
+            <Tabela titulo="2025.1" colunas={colunasNotas} dados={notas2025_1} />
           </div>
-
-import HeaderNotas from '../components/Headernotas';
-import TabelaNotas from '../components/Tabelanotas';
-import TextoDescritivoNotas from '../components/TextoDescritivoNotas';
-
-export default function Notas() {
-  return (
-    <div className="flex flex-col md:flex-row min-h-screen bg-[#FFFFFF] font-sans">
-      <Sidebar />
-      
-      <div className="flex flex-col flex-1 p-6 md:p-10">
-        <HeaderNotas />
-
-        <main>
-          <TextoDescritivoNotas />
-          
-          <TabelaNotas />
         </main>
-        
       </div>
     </div>
   );

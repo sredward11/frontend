@@ -1,4 +1,3 @@
-export default function Menunavegacao() {
 export default function MenuNavegacao() {
   return (
     <nav>
