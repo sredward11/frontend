@@ -8,6 +8,11 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
+import tailwindcss from '@tailwindcss/vite'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
   // Configuração do Servidor para Docker  
   server: {
     host: "0.0.0.0",

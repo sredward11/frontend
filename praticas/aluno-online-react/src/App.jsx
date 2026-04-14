@@ -2,6 +2,8 @@ import Dashboard from './pages/Dashboard';
 import Faltas from './pages/Faltas';
 import Boletos from './pages/Boletos';
 import Notas from './pages/Notas';
+import Notas from './pages/Notas';
+import Boletos from './pages/Boletos';
 import Requerimentos from './pages/Requerimentos';
 
 export default function App() {
@@ -13,6 +15,12 @@ export default function App() {
       {/* <Faltas /> */}
       {/* <Boletos /> */}
       <Requerimentos />
+
+      {/*/<Dashboard /> */}
+      <Notas /> 
+      {/* <Faltas /> */}
+      {/* <Boletos /> */}
+      {/* <Requerimentos /> */}
     </>
   );
 }

@@ -43,7 +43,7 @@ jobs:
 
       - name: Instalar Dependências
         working-directory: ./praticas/aluno-online-react
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Executar Lint React (ESLint)
         working-directory: ./praticas/aluno-online-react

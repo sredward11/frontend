@@ -28,6 +28,21 @@ export default function Requerimentos() {
           <TextoDescritivo texto="Faça solicitações online para a secretaria" />  
           
           <Tabela colunas={colunasRequerimentos} dados={dadosRequerimentos} />
+import HeaderRequerimentos from '../components/HeaderRequerimentos';
+import TabelaRequerimentos from '../components/TabelaRequerimentos';
+import TextoDescritivoRequerimentos from '../components/TextoDescritivoRequerimentos';
+
+export default function Requerimentos() {
+  return (
+    <div className="flex flex-col md:flex-row min-h-screen bg-[#FFFFFF] font-sans">
+      <Sidebar />
+      
+      <div className="flex flex-col flex-1 p-6 md:p-10">
+        <HeaderRequerimentos />
+
+        <main>
+            <TextoDescritivoRequerimentos />  
+          <TabelaRequerimentos />
         </main>
         
       </div>

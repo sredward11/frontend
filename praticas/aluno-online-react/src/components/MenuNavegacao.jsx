@@ -1,4 +1,5 @@
 export default function Menunavegacao() {
+export default function MenuNavegacao() {
   return (
     <nav>
       <ul className="list-disc pl-5 flex flex-col gap-4 marker:text-gray-800">
