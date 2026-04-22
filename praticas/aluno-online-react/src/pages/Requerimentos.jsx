@@ -29,7 +29,6 @@ export default function Requerimentos() {
         <main>
           <Tabela colunas={colunasRequerimentos} dados={dadosRequerimentos} />
         </main>
-        
       </div>
     </div>
   );

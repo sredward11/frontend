@@ -55,7 +55,6 @@ export default function Notas() {
             />
           </div>
         </main>
-        
       </div>
     </div>
   );

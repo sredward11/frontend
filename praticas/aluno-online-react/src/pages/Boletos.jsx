@@ -1,3 +1,4 @@
+// src/pages/Boletos.jsx
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import Tabela from '../components/Tabela';
@@ -35,7 +36,6 @@ export default function Boletos() {
         <main>
           <Tabela colunas={colunasBoletos} dados={dadosBoletos} />
         </main>
-        
       </div>
     </div>
   );

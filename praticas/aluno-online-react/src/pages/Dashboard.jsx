@@ -1,3 +1,4 @@
+// src/pages/Dashboard.jsx
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import CardLista from '../components/Cardlista'
@@ -39,7 +40,6 @@ export default function Dashboard() {
             <CardLista titulo="Minhas Disciplinas" itens={dadosDisciplinas} />
           </section>
         </main>
-        
       </div>
     </div>
   );
