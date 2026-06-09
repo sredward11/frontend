@@ -60,7 +60,8 @@ button {
 
 header {
     display: flex;
-    align-items: center;
+    
+align-items: center;
     height: 56px;
     padding: 0.rem;
     background-color: var(--cor-primaria);
