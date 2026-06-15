@@ -1,0 +1,1 @@
+Extensões: remote developmen, Container Tools, Dev Containers
