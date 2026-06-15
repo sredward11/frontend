@@ -1,33 +1,51 @@
-import Sidebar from '../components/Sidebar';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
-import Tabela from '../components/Tabela'; 
+import TextoDescritivo from '../components/TextoDescritivo';
+import Tabela from '../components/Tabela';
+import { listarRequerimentos } from '../Service/RequerimentoService';
 
 export default function Requerimentos() {
-  
-  const colunasRequerimentos = ["Tipo de Requerimento", "Data de Solicitação", "Situação"];
+  const [lista, setLista] = useState([]);
+  const colunasRequerimentos = ["Tipo de Requerimento", "Descrição", "Data de Solicitação", "Situação"];
 
-  const dadosRequerimentos = [
-    { tipo: "Revisão de Menção", data: "15/12/2025", situacao: "Indeferido" },
-    { tipo: "Dispensa de Disciplina", data: "12/06/2025", situacao: "Indeferido" },
-    { tipo: "Trancamento de Matrícula", data: "05/01/2024", situacao: "Deferido" },
-    { tipo: "Mudança de Turno", data: "10/10/2023", situacao: "Deferido" },
-    { tipo: "Renovação de Matrícula", data: "20/02/2023", situacao: "Deferido"}
-  ];
+  useEffect(() => {
+    const carregarDados = async () => {
+      try {
+        const dados = await listarRequerimentos();
+        setLista(dados);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    carregarDados();
+  }, []);
+
+  const dadosFormatados = lista.map((req) => ({
+    tipo: req.tipo,
+    descricao: req.descricao,
+    data: req.dataRequerimento,
+    situacao: req.situacao || "Em análise"
+  }));;
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-[#FFFFFF] font-sans">
-      
-      <Sidebar paginaAtual="Requerimentos" />
-      
       <div className="flex flex-col flex-1 p-6 md:p-10">
-        
-        <Header 
-          titulo="Meus Requerimentos" 
-          descricao="Faça solicitações online para a secretaria" 
-        />
+        <Header titulo="Meus Requerimentos" />
 
         <main>
-          <Tabela colunas={colunasRequerimentos} dados={dadosRequerimentos} />
+          <div className="flex justify-between items-center mb-6">
+            <TextoDescritivo texto="Faça solicitações online para a secretaria" />
+            <Link
+              to="/requerimentos/novo"
+              className="bg-white hover:bg-black text-black hover:text-white border-3 border-black p-4 font-bold py-2 px-4 rounded transition"
+            >
+              ➕ Novo Requerimento
+            </Link>
+          </div>
+
+          <Tabela colunas={colunasRequerimentos} dados={dadosFormatados} />
         </main>
       </div>
     </div>
